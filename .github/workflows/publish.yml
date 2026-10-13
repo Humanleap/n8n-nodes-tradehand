@@ -1,0 +1,35 @@
+# Publishes on version tags via npm trusted publishing (OIDC) with provenance, which n8n requires for verified nodes.
+
+name: Publish
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+
+jobs:
+  publish:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          # Node 24 ships npm 11, which trusted publishing needs.
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # In CI this lints, builds, then runs `npm publish` with provenance.
+      - run: pnpm run release

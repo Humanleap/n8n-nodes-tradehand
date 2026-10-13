@@ -1,0 +1,13 @@
+{
+	"node": "n8n-nodes-tradehand",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Miscellaneous"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/Humanleap/n8n-nodes-tradehand#readme"
+			}
+		]
+	}
+}

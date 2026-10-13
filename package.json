@@ -1,0 +1,54 @@
+{
+  "name": "n8n-nodes-tradehand",
+  "version": "0.1.0",
+  "description": "n8n node for Tradehand: find UK tradespeople, their services and Tradehand pages.",
+  "license": "MIT",
+  "homepage": "https://tradehand.com",
+  "keywords": [
+    "n8n-community-node-package",
+    "tradehand",
+    "uk",
+    "tradespeople",
+    "trades"
+  ],
+  "author": {
+    "name": "Blake Folgado",
+    "email": "blake@humanleap.com",
+    "url": "https://humanleap.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Humanleap/n8n-nodes-tradehand.git"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "release": "n8n-node release",
+    "prepublishOnly": "n8n-node prerelease",
+    "test": "n8n-node build && node --test test/*.test.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [],
+    "nodes": [
+      "dist/nodes/Tradehand/Tradehand.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "^0.52.2",
+    "eslint": "9.32.0",
+    "prettier": "3.6.2",
+    "release-it": "^21.1.0",
+    "typescript": "5.9.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
