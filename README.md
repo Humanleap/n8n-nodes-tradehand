@@ -31,6 +31,7 @@ Returns one item per trader:
   "publicReference": "orsidaen-electrical-services",
   "name": "Orsidaen Electrical Services",
   "trade": "Electrician",
+  "matchedTrade": "Electrician",
   "location": "Winchester, SO23",
   "claimed": false,
   "accreditations": [],
